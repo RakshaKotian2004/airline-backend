@@ -20,6 +20,8 @@ router.get('/airline',async(req,res)=>{
 
 
 
+
+
 //Get-allairlines,code,shuffle,limit,responseType
 
 router.get('/airlines',async(req,res)=>{
@@ -27,8 +29,7 @@ router.get('/airlines',async(req,res)=>{
     let result;   
     const {code,limit,shuffle,responseType} = req.query;
 
-   
-    //Get-all airlines
+   //Get-all airlines
     if (!code && !limit && !shuffle && !responseType) {
       const airlines = await Airlines.find();
       return res.send(airlines);
@@ -59,8 +60,7 @@ router.get('/airlines',async(req,res)=>{
 
     //Get-ResponseType
   
-
-    if (responseType === 'array') {
+  if (responseType === 'array') {
       const airlines = await Airlines.find();
       result = airlines;
 
@@ -107,7 +107,6 @@ router.post('/airline',async(req,res)=>{
       return res.status(400).send(" Airline with this name already exists");
     }
 
-  
     const Code = await Airlines.exists({ code: req.body.code });
     if (Code) {
       return res.status(400).send(" Airline with this code already exists");
@@ -134,8 +133,7 @@ router.post('/airline',async(req,res)=>{
    
    //Get-By Id
     router.get('/airline/:id',async(req,res)=>{
-
-              const {id}=req.params;
+      const {id}=req.params;
       try{
               const airline = await Airlines.findById(req.params.id)
               res.send(airline)
