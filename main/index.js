@@ -7,7 +7,7 @@ app.use('/',detail);
 
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://kotianraksha2468:pZkikvFVxWZQOfrw@cluster.abcde.mongodb.net/APIDBex?retryWrites=true&w=majority&appName=Cluster")
+mongoose.connect("mongodb+srv://kotianraksha2468:pZkikvFVxWZQOfrw@cluster.qjmqrjm.mongodb.net/APIDBex?retryWrites=true&w=majority&appName=Cluster")
   .then(() => console.log("MongoDB Connected "))
   .catch(err => console.error("Connection error ", err));
 
