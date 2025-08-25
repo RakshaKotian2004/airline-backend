@@ -1,8 +1,7 @@
 const mongoose=require('mongoose')
 
 const airlineSchema = new mongoose.Schema({
-    
-    name:{
+     name:{
         type:String,
         required:true
     },

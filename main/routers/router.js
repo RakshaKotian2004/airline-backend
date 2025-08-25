@@ -45,8 +45,7 @@ router.get('/airlines',async(req,res)=>{
     
     } 
 
-  //Get-shuffle and limit
-
+    //Get-shuffle and limit
    if (shuffle || limit) {
       let result = await Airlines.find();
       if (shuffle === 'true') {
@@ -59,8 +58,7 @@ router.get('/airlines',async(req,res)=>{
     }
 
     //Get-ResponseType
-  
-  if (responseType === 'array') {
+   if (responseType === 'array') {
       const airlines = await Airlines.find();
       result = airlines;
 
@@ -92,7 +90,6 @@ router.get('/airlines',async(req,res)=>{
 
 
 //post-to post a new Airline
-
 router.post('/airline',async(req,res)=>{
   try{
  const airline=new Airlines ({
