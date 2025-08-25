@@ -5,15 +5,11 @@ app.use(express.json());
 const detail=require('./routers/router');
 app.use('/',detail);
 
-const mongoose=require('mongoose');
-const url='mongodb://localhost/APIDBex'
+const mongoose = require("mongoose");
 
-mongoose.connect(url)
-const con=mongoose.connection;
-
-con.on('open',()=>{
-    console.log('connected..');
-});
+mongoose.connect("mongodb+srv://kotianraksha2468:pZkikvFVxWZQOfrw@cluster.abcde.mongodb.net/APIDBex?retryWrites=true&w=majority&appName=Cluster")
+  .then(() => console.log("MongoDB Connected "))
+  .catch(err => console.error("Connection error ", err));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
